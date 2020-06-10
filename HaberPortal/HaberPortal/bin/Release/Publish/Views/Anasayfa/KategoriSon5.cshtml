@@ -1,0 +1,28 @@
+﻿@using HaberPortal.Entity;
+@model List<Haber>
+
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <!--
+        <a href="/Anasayfa/HaberDetay/@item.id" style="color:black;" />
+        <img src=@item.resim_yolu style="width:250px; height:150px;">
+        <h6>@item.baslik</h6>
+            -->
+        <div class="col-6 col-md-4 col-lg-12 ">
+            <div class="card float-left float-lg-right card-div-hover p-1" style="width: 18rem;">
+
+                <img src="@item.resim_yolu" class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+                    <a href="/Anasayfa/HaberDetay/@item.id" style="color:black; text-decoration:none;"  />
+                    <p class="card-text">@item.baslik</p>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        }
+    </div>

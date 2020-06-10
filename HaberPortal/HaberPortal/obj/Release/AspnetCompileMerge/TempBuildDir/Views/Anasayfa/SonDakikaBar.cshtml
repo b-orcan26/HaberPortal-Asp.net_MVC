@@ -1,0 +1,14 @@
+﻿@using HaberPortal.Entity;
+@model List<Haber>
+
+    <ul class="haberler" style="width:100%;">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <li style="width:100%; float:left;">
+                <a href="/Anasayfa/HaberDetay/@Model[i].id" style="color:white"><strong style="color:white">@Html.Raw(Model[i].baslik)</strong></a>
+                
+            </li>
+        }
+
+        
+    </ul>

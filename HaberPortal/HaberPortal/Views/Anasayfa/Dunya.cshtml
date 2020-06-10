@@ -1,0 +1,19 @@
+﻿@using HaberPortal.Entity;
+@model List<Haber>
+@{
+    ViewBag.Title = "Dunya";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center;">Dunyadan Haberler</h2>
+<div class="row">
+
+    <div class="col-2" style="float:left;"></div>
+    <div class="col-8">
+        <div class="row">
+           @Html.Partial("KategoriHaberleriPartialView",Model)
+        </div>
+    </div>
+    <div class="col-2" style="float:right;"></div>
+
+</div>

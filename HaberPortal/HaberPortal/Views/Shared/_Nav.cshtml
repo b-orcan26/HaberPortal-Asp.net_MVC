@@ -1,0 +1,108 @@
+﻿
+
+
+<style>
+
+
+
+    ul.haberler {
+        list-style-type: none;
+        width: 200px;
+        height: 30px;
+        overflow: hidden;
+        background-color: #e32636;
+        margin-top: 5px;
+    }
+
+        ul.haberler li {
+            display: block;
+            width: 200px;
+            height: 100px;
+            padding-top: 2px;
+            float: left;
+            background-color: #e32636;
+            color: white;
+            
+        }
+
+    h2 {
+        color: #6B6B6B;
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+</style>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark no-gutters">
+
+
+
+
+    <div class="collapse navbar-collapse d-flex justify-content-center no-gutters" id="navbarText">
+
+
+        <a class="navbar-brand" href="#">
+            <img src="https://www.underconsideration.com/brandnew/archives/zagat_icon.png" width="30" height="30" class="d-inline-block align-top ml-5" alt="">
+            Z Haber
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#NavbarContentID"><span class="navbar-toggler-icon"></span></button>
+        <div id="NavbarContentID" class="collapse navbar-collapse justify-content-center mr-5">
+            <ul class="navbar-nav" style="align-items:center">
+
+                <li class="nav-item">
+                    @Html.ActionLink("Anasayfa", "Anasayfa", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Son Dakika", "SonDakika", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Gundem", "Gundem", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Ekonomi", "Ekonomi", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Dunya", "Dunya", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Spor", "Spor", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Magazin", "Magazin", null, new { @class = "nav-link" })
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</nav>
+
+
+
+
+    <div class="container-fluid" style="height:30px;">
+
+        <div class="row" style=" background-color:#e32636;">
+            <div class="col-3 col-md-4" style=" height:30px; margin-top:7px; padding-right:0px;">
+                <text style="float:right; color:white"> <b>Sıcak Haber :</b></text>
+            </div>
+            <div class="col-9 col-md-8 no-gutters" style=" height:30px; padding-left:0px;">
+
+                @{Html.RenderAction("SonDakikaBar", "Anasayfa"); }
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+<script>
+    function fnHaber_Kaydir() {
+        $('.haberler li:first').scrollLeft(function () {
+            $(this).appendTo($('.haberler')).slideDown(1000);
+        });
+    }
+    setInterval(function () { fnHaber_Kaydir() }, 6000);
+</script>
+

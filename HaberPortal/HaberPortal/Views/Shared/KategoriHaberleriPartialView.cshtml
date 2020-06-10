@@ -1,0 +1,16 @@
+﻿
+@using HaberPortal.Entity;
+@model List<Haber>
+
+
+@foreach (var haber in Model)
+{
+    <div class="card col-12 col-md-6 col-lg-4 card-div-hover" style="width: 18rem; margin-top:5px; padding-top:5px;">
+        <a href="/Anasayfa/HaberDetay/@haber.id" style="color:black; text-decoration:none;">
+            <img src=@haber.resim_yolu class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@Html.Raw(haber.baslik.Replace(":", "").Substring(0, 40)) ...</h5>
+                <p class="card-text">@Html.Raw(haber.icerik.Substring(0, 100)) ...</p>
+            </div>
+    </div>
+}

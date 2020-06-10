@@ -1,0 +1,22 @@
+﻿
+@using HaberPortal.Entity;
+@model List<Haber>
+
+@{ 
+    Layout = "~/Views/Yonetim/_LayoutYonetim.cshtml";
+}
+
+
+    @foreach (var haber in Model)
+    {
+        <div class="col-md-3">
+        <div class="card " style="width: 18rem; margin-top:5px;">
+            <a href="" style="color:black;">
+                <img src=@haber.resim_yolu class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@haber.baslik.Replace(":", "").Substring(0, 40) ...</h5>
+                    <p class="card-text">@haber.icerik.Substring(0, 100) ...</p>
+                </div>
+        </div>
+        </div>
+    }

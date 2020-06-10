@@ -1,0 +1,77 @@
+﻿
+@{
+    Layout = null;
+}
+
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v3.8.6">
+        <title>Dashboard Template · Bootstrap</title>
+
+
+        <link href="~/Content/Dashboard.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+
+
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+        </style>
+        <!-- Custom styles for this template -->
+        <link href="dashboard.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark flex-md-nowrap shadow">
+            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Ana Sayfa</a>
+            <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap">
+                    @Html.ActionLink("Çıkış Yap","LogOff","Yonetim",new {@class= "nav-link" })
+                </li>
+            </ul>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                            @{Html.RenderAction("KategorileriListele");}
+                        </ul>
+                    </div>
+                </nav>
+
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                  
+                    <div class="row">
+
+                        @RenderBody()
+
+                    </div>
+                    
+
+
+
+
+                </main>
+            </div>
+        </div>
+        
+        <script src="~/Scripts/jquery-3.0.0.slim.min.js"></script>
+        <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+        <script src="~/Scripts/umd/feathermin.js"></script>
+        <script src="~/Scripts/umd/chartmin.js"></script>
+        <script src="~/Scripts/umd/dashbord.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,29 @@
+﻿@using HaberPortal.Entity;
+@model Haber
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<body>
+    <div class="container-fluid">
+        <div class="row" style="margin-top:50px;">
+            <div class="col-0 col-xl-2" style="float:left;"></div>
+            <div class="col-12 col-lg-7">
+                <h3 style="margin-bottom:25px;">@Model.baslik</h3>
+                <img class="align-content-stretch img-fluid" src=@Model.resim_yolu>
+                <p style="margin-top:30px;">@Model.icerik</p>
+            </div>
+            <!-- col-3-->
+            <div class="col-12 col-lg-5 col-xl-3 ">   
+                
+                    <h4 class="text-sm-center " style="text-decoration:underline; text-decoration-color:dimgrey">@Model.Kategori.kategori_ad Haberleri</h4>
+              
+                
+                    @{Html.RenderAction("KategoriSon5", new { kategori_id = Model.kategori_id });}
+                
+            </div>
+        </div>
+    </div>
+</body>
+
